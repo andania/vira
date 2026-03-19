@@ -1,0 +1,10 @@
+📦 Your Order Has Shipped! #{{orderNumber}}
+Your order is on its way!
+
+Tracking Number: {{trackingNumber}}
+Carrier: {{carrier}}
+Estimated Delivery: {{estimatedDate}}
+
+Track package: {{trackingUrl}}
+
+- VIRAZ Marketplace

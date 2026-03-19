@@ -1,0 +1,7 @@
+✅ Deposit confirmed: ${{amount}}
+{{capAmount}} CAP has been added to your wallet.
+
+New balance: {{newBalance}} CAP
+Transaction ID: {{transactionId}}
+
+- VIRAZ Finance

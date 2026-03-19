@@ -1,0 +1,9 @@
+🔴 LIVE NOW: {{roomName}}
+Host: {{hostName}}
+Join {{participantCount}}+ viewers!
+
+Tap to join: {{roomUrl}}
+
+Earn {{reward}} CAP by participating!
+
+- VIRAZ Live

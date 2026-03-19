@@ -1,0 +1,9 @@
+✅ Order Confirmed #{{orderNumber}}
+Your order has been confirmed and is being processed.
+
+Items: {{itemCount}}
+Total: ${{total}}
+
+Track your order: {{trackingUrl}}
+
+- VIRAZ Marketplace

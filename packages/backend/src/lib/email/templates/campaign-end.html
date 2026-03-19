@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Ended - VIRAZ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f7;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .campaign-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .campaign-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .metric-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #43e97b;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .roi-box {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .roi-value {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            height: 200px;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .bar {
+            flex: 1;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            border-radius: 4px 4px 0 0;
+            min-height: 30px;
+        }
+        .bar-label {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .insights-box {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Campaign Completed</h1>
+        </div>
+        
+        <div class="content">
+            <h2 style="text-align: center;">Hello {{name}}!</h2>
+            
+            <p style="text-align: center;">Your campaign has successfully completed. Here's how it performed:</p>
+            
+            <div class="campaign-summary">
+                <div class="campaign-name">{{campaignName}}</div>
+                <div>{{startDate}} - {{endDate}}</div>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-value">{{impressions}}</div>
+                    <div class="metric-label">Impressions</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">{{clicks}}</div>
+                    <div class="metric-label">Clicks</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">{{ctr}}%</div>
+                    <div class="metric-label">CTR</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">{{conversions}}</div>
+                    <div class="metric-label">Conversions</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">{{engagements}}</div>
+                    <div class="metric-label">Engagements</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">{{capSpent}}</div>
+                    <div class="metric-label">CAP Spent</div>
+                </div>
+            </div>
+            
+            <div class="roi-box">
+                <div style="font-size: 16px; margin-bottom: 10px;">Return on Investment</div>
+                <div class="roi-value">{{roi}}%</div>
+                <div style="margin-top: 10px;">Revenue: ${{revenue}} | Spend: ${{spend}}</div>
+            </div>
+            
+            <div class="chart-container">
+                <h4 style="margin: 0;">Daily Performance</h4>
+                <div class="bar-chart">
+                    {{#each dailyData}}
+                    <div style="flex: 1; text-align: center;">
+                        <div class="bar" style="height: {{this.height}}px;"></div>
+                        <div class="bar-label">{{this.day}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            
+            <div class="insights-box">
+                <h4 style="margin-top: 0;">🔍 Key Insights</h4>
+                <ul style="margin-bottom: 0;">
+                    <li>Best performing day: {{bestDay}}</li>
+                    <li>Highest engagement rate: {{bestTime}}</li>
+                    <li>Top audience: {{topAudience}}</li>
+                    <li>Cost per conversion: ${{costPerConversion}}</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{{analyticsUrl}}" class="button">View Full Analytics</a>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 8px;">
+                <p style="margin: 0;"><strong>💡 Ready for your next campaign?</strong> Use these insights to optimize your future campaigns.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Questions about your campaign results? Contact our support team at <a href="mailto:support@viraz.com">support@viraz.com</a></p>
+            <p>&copy; 2024 VIRAZ Platform. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Your VIRAZ verification code is: {{code}}
+
+This code will expire in 10 minutes. If you didn't request this, please ignore this message.
+
+- VIRAZ Team

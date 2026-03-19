@@ -1,0 +1,9 @@
+🏆 Achievement Unlocked: {{achievement}}
+You earned {{reward}} CAP!
+
+Total achievements: {{totalAchievements}}
+Current rank: {{rank}}
+
+View all achievements: {{profileUrl}}
+
+- VIRAZ Gaming

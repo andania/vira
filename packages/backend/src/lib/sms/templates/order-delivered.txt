@@ -1,0 +1,7 @@
+🎉 Your Order Has Been Delivered! #{{orderNumber}}
+We hope you love your purchase!
+
+Rate your items: {{rateUrl}}
+Earn {{reward}} CAP for leaving reviews!
+
+- VIRAZ Marketplace

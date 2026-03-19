@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievement Unlocked - VIRAZ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f7;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 30px;
+            text-align: center;
+        }
+        .achievement-icon {
+            font-size: 80px;
+            margin: 20px 0;
+            animation: bounce 1s ease infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .achievement-name {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+        .achievement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .achievement-description {
+            font-size: 18px;
+            margin: 20px 0;
+            color: #666;
+        }
+        .reward-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .reward-amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #f5576c;
+        }
+        .badge-preview {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 30px 0;
+        }
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .stat-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .share-buttons {
+            margin: 20px 0;
+        }
+        .share-button {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .share-twitter { background: #1DA1F2; }
+        .share-facebook { background: #4267B2; }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏆 Achievement Unlocked!</h1>
+        </div>
+        
+        <div class="content">
+            <div class="achievement-icon">🏆</div>
+            
+            <h2 style="margin: 0;">Congratulations, {{name}}!</h2>
+            
+            <div class="achievement-name">{{achievementName}}</div>
+            
+            <div class="achievement-card">
+                <div style="font-size: 48px; margin-bottom: 10px;">{{achievementIcon}}</div>
+                <div style="font-size: 20px; font-weight: bold;">{{achievementTitle}}</div>
+            </div>
+            
+            <p class="achievement-description">{{achievementDescription}}</p>
+            
+            <div class="reward-box">
+                <div style="font-size: 16px; color: #666; margin-bottom: 10px;">Reward Earned</div>
+                <div class="reward-amount">{{reward}} CAP</div>
+                {{#if badgeName}}
+                <div style="margin-top: 15px;">
+                    <div class="badge-preview">{{badgeIcon}}</div>
+                    <div style="font-weight: 600; margin-top: 5px;">{{badgeName}} Badge</div>
+                </div>
+                {{/if}}
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">{{totalAchievements}}</div>
+                    <div class="stat-label">Total Achievements</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{{completionRate}}%</div>
+                    <div class="stat-label">Completion Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{{rank}}</div>
+                    <div class="stat-label">Current Rank</div>
+                </div>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h3>Next Achievement to Unlock</h3>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                    <div style="font-weight: 600;">{{nextAchievement}}</div>
+                    <div style="font-size: 14px; color: #666; margin: 5px 0;">{{nextProgress}}% complete</div>
+                    <div style="background: #e0e0e0; height: 6px; border-radius: 3px; overflow: hidden;">
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); width: {{nextProgress}}%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="share-buttons">
+                <p style="margin-bottom: 10px;">Share your achievement:</p>
+                <a href="https://twitter.com/intent/tweet?text=I%20just%20unlocked%20the%20{{achievementName}}%20on%20VIRAZ!&url={{shareUrl}}" class="share-button share-twitter" target="_blank">Twitter</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{shareUrl}}" class="share-button share-facebook" target="_blank">Facebook</a>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{{profileUrl}}" class="button">View My Achievements</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Keep engaging to unlock more achievements!</p>
+            <p>&copy; 2024 VIRAZ Platform. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

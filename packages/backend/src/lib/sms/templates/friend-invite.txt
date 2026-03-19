@@ -1,0 +1,6 @@
+👋 {{friendName}} invited you to join VIRAZ!
+VIRAZ is where you earn CAP by watching ads, joining live rooms, and engaging with brands.
+
+Sign up with {{friendName}}'s link and get 100 bonus CAP: {{inviteUrl}}
+
+- VIRAZ Team

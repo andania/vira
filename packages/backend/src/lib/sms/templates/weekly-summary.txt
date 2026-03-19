@@ -1,0 +1,15 @@
+📊 Your Weekly VIRAZ Summary
+━━━━━━━━━━━━━━━━━━━━━
+CAP Earned: {{capEarned}}
+Engagements: {{engagements}}
+Rooms Joined: {{roomsJoined}}
+New Followers: {{newFollowers}}
+
+Rank: {{rank}} ({{progress}}% to next)
+Achievements: {{achievements}}
+
+Top earner this week: {{topEarner}}
+
+View full stats: {{statsUrl}}
+
+- VIRAZ Team

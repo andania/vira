@@ -1,0 +1,10 @@
+🎁 Referral Bonus Earned!
+{{friendName}} just joined VIRAZ using your link.
+You earned {{bonus}} CAP!
+
+Total referrals: {{totalReferrals}}
+Total referral earnings: {{totalEarnings}}
+
+Keep sharing: {{referralUrl}}
+
+- VIRAZ Rewards

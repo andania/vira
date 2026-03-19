@@ -1,0 +1,8 @@
+🔐 Two-factor authentication has been disabled on your VIRAZ account.
+Time: {{time}}
+📍 Location: {{location}}
+📱 Device: {{device}}
+
+If you didn't disable this, please contact support immediately.
+
+- VIRAZ Security Team

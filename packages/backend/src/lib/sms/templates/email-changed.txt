@@ -1,0 +1,9 @@
+📧 Your email address has been changed on your VIRAZ account.
+New email: {{newEmail}}
+Time: {{time}}
+📍 Location: {{location}}
+📱 Device: {{device}}
+
+If you didn't make this change, please contact support immediately.
+
+- VIRAZ Security Team

@@ -1,0 +1,713 @@
+// =====================================================
+// 2. USER PROFILES DOMAIN
+// =====================================================
+
+model UserProfile {
+  userId             String   @id @db.Uuid
+  firstName          String?
+  lastName           String?
+  displayName        String?
+  gender             Gender?
+  birthDate          DateTime? @db.Date
+  avatarUrl          String?
+  coverUrl           String?
+  bio                String?
+  website            String?
+  occupation         String?
+  company            String?
+  education          String?
+  interests          String[]
+  languagePreference String   @default("en")
+  timezone           String   @default("UTC")
+  updatedAt          DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserPreference {
+  userId               String   @id @db.Uuid
+  notificationPush     Boolean  @default(true)
+  notificationEmail    Boolean  @default(true)
+  notificationSms      Boolean  @default(false)
+  notificationMarketing Boolean @default(true)
+  quietHoursStart      String?  // TIME format
+  quietHoursEnd        String?  // TIME format
+  contentLanguage      String[]
+  contentCategories    String[]
+  contentSensitivity   Boolean  @default(false)
+  theme                String   @default("light")
+  autoplayVideos       Boolean  @default(true)
+  dataSaverMode        Boolean  @default(false)
+  updatedAt            DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserLocation {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId        String   @db.Uuid
+  locationType  String?  // home, work, billing, shipping
+  addressLine1  String?
+  addressLine2  String?
+  city          String?
+  state         String?
+  postalCode    String?
+  country       String?
+  coordinates   Unsupported("geography(point)?")?
+  isDefault     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model UserLanguage {
+  userId       String   @db.Uuid
+  languageCode String
+  proficiency  String?  // native, fluent, conversational, basic
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, languageCode])
+}
+
+model UserSocialLink {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId     String   @db.Uuid
+  platform   String   // twitter, instagram, facebook, linkedin, tiktok, youtube
+  url        String
+  username   String?
+  verified   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, platform])
+}
+
+model UserVerification {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId          String   @db.Uuid
+  verificationType String // id_card, passport, drivers_license, address_proof, business_reg
+  documentUrl     String[]
+  documentNumber  String?
+  issuedCountry   String?
+  issuedDate      DateTime? @db.Date
+  expiryDate      DateTime? @db.Date
+  status          VerificationStatus @default(PENDING)
+  verifiedBy      String?  @db.Uuid
+  verifiedAt      DateTime?
+  rejectionReason String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user     User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  verifier User? @relation("verifiedBy", fields: [verifiedBy], references: [id])
+}
+
+model UserStatistics {
+  userId                    String   @id @db.Uuid
+  totalCapEarned            Int      @default(0)
+  totalCapSpent             Int      @default(0)
+  totalAdsWatched           Int      @default(0)
+  totalRoomsJoined          Int      @default(0)
+  totalComments             Int      @default(0)
+  totalLikesGiven           Int      @default(0)
+  totalShares               Int      @default(0)
+  totalSuggestions          Int      @default(0)
+  totalSuggestionsAccepted  Int      @default(0)
+  totalFollowers            Int      @default(0)
+  totalFollowing            Int      @default(0)
+  totalReferrals            Int      @default(0)
+  totalPurchases            Int      @default(0)
+  totalSpent                Float    @default(0)
+  averageTransactionAmount  Float?   // Average transaction amount
+  transactionStdDev         Float?   // Standard deviation for fraud detection
+  warnings                  Int      @default(0)
+  engagementRate            Float    @default(0)
+  dailyStreak               Int      @default(0)
+  longestStreak             Int      @default(0)
+  lastActiveDate            DateTime? @db.Date
+  updatedAt                 DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserActivityLog {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId        String   @db.Uuid
+  activityType  String
+  targetType    String?  // ad, room, campaign, product, etc.
+  targetId      String?  @db.Uuid
+  activityData  Json?
+  ipAddress     String?  @db.Inet
+  userAgent     String?
+  sessionId     String?  @db.Uuid
+  createdAt     DateTime @default(now())
+
+  user    User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  session UserSession?  @relation(fields: [sessionId], references: [id])
+
+  @@index([userId, createdAt])
+  @@index([activityType])
+}
+
+model UserFollow {
+  followerId  String   @db.Uuid
+  followingId String   @db.Uuid
+  followedAt  DateTime @default(now())
+
+  follower User @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  following User @relation("following", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@id([followerId, followingId])
+  @@index([followingId])
+}
+
+model UserBlock {
+  blockerId String   @db.Uuid
+  blockedId String   @db.Uuid
+  reason    String?
+  blockedAt DateTime @default(now())
+
+  blocker User @relation("blocker", fields: [blockerId], references: [id], onDelete: Cascade)
+  blocked User @relation("blocked", fields: [blockedId], references: [id], onDelete: Cascade)
+
+  @@id([blockerId, blockedId])
+}
+
+model Referral {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  referrerId      String   @db.Uuid
+  referredEmail   String?
+  referredPhone   String?
+  referredUserId  String?  @db.Uuid
+  referralCode    String
+  status          String   @default("pending") // pending, joined, completed, expired
+  rewardAmount    Int?
+  rewardPaid      Boolean  @default(false)
+  joinedAt        DateTime?
+  createdAt       DateTime @default(now())
+  completedAt     DateTime?
+
+  referrer User  @relation("referrer", fields: [referrerId], references: [id], onDelete: Cascade)
+  referred User? @relation("referred", fields: [referredUserId], references: [id])
+
+  @@index([referralCode])
+}
+
+// =====================================================
+// 3. SPONSOR & BRAND DOMAIN
+// =====================================================
+
+model Sponsor {
+  id                   String   @id @db.Uuid
+  companyName          String
+  registrationNumber   String?
+  taxId                String?
+  businessType         String?
+  businessCategory     String?
+  website              String?
+  verificationStatus   VerificationStatus @default(PENDING)
+  verifiedBy           String?  @db.Uuid
+  verifiedAt           DateTime?
+  accountManagerId     String?  @db.Uuid
+  subscriptionTier     String   @default("basic")
+  subscriptionExpires  DateTime?
+  creditLimit          Float    @default(0)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  user            User             @relation(fields: [id], references: [id], onDelete: Cascade)
+  verifier        User?            @relation("sponsorVerifier", fields: [verifiedBy], references: [id])
+  accountManager  User?            @relation("accountManager", fields: [accountManagerId], references: [id])
+  brands          Brand[]
+  accounts        SponsorAccount[]
+  payoutAccounts  PayoutAccount[]
+  payoutTransactions PayoutTransaction[]
+  verifications   SponsorVerification[]
+}
+
+model SponsorAccount {
+  id                 String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  sponsorId          String   @db.Uuid
+  accountType        String   // prepaid, postpaid, credit
+  balance            Float    @default(0)
+  reservedBalance    Float    @default(0)
+  lifetimeDeposits   Float    @default(0)
+  lifetimeSpend      Float    @default(0)
+  currency           String   @default("USD")
+  autoRecharge       Boolean  @default(false)
+  autoRechargeThreshold Float?
+  autoRechargeAmount Float?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  sponsor Sponsor @relation(fields: [sponsorId], references: [id], onDelete: Cascade)
+}
+
+model SponsorVerification {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  sponsorId       String   @db.Uuid
+  status          String   @default("pending") // pending, approved, rejected, additional_docs_required
+  documents       Json?    // Array of uploaded documents
+  businessDetails Json?    // Business information
+  directorDetails Json?    // Director information
+  adminNotes      String?
+  processedBy     String?  @db.Uuid
+  processedAt     DateTime?
+  submittedAt     DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  sponsor Sponsor @relation(fields: [sponsorId], references: [id], onDelete: Cascade)
+  admin   User?   @relation(fields: [processedBy], references: [id])
+
+  @@index([sponsorId])
+  @@index([status])
+}
+
+model Brand {
+  id                   String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  sponsorId            String   @db.Uuid
+  name                 String
+  slug                 String   @unique
+  description          String?
+  shortDescription     String?  @db.VarChar(255)
+  logoUrl              String?
+  coverUrl             String?
+  website              String?
+  industry             String?
+  foundedYear          Int?
+  headquarters         String?
+  socialLinks          Json?
+  verificationStatus   VerificationStatus @default(PENDING)
+  isActive             Boolean  @default(true)
+  settings             Json?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  sponsor Sponsor @relation(fields: [sponsorId], references: [id], onDelete: Cascade)
+
+  members      BrandMember[]
+  followers    BrandFollower[]
+  categories   BrandCategoryMapping[]
+  locations    BrandLocation[]
+  contacts     BrandContact[]
+  analytics    BrandAnalytics[]
+  campaigns    Campaign[]
+  rooms        Room[]
+  products     Product[]
+}
+
+model BrandMember {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  brandId     String   @db.Uuid
+  userId      String   @db.Uuid
+  role        String?  // owner, admin, manager, creator, analyst, moderator
+  permissions Json?
+  joinedAt    DateTime @default(now())
+
+  brand Brand @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([brandId, userId])
+}
+
+model BrandFollower {
+  brandId    String   @db.Uuid
+  userId     String   @db.Uuid
+  followedAt DateTime @default(now())
+  notificationEnabled Boolean @default(true)
+
+  brand Brand @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([brandId, userId])
+  @@index([userId])
+}
+
+model BrandCategory {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  slug        String   @unique
+  description String?
+  parentId    String?  @db.Uuid
+  iconUrl     String?
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  parent   BrandCategory?          @relation("categoryParent", fields: [parentId], references: [id])
+  children BrandCategory[]         @relation("categoryParent")
+  brands   BrandCategoryMapping[]
+}
+
+model BrandCategoryMapping {
+  brandId    String @db.Uuid
+  categoryId String @db.Uuid
+
+  brand    Brand         @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  category BrandCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([brandId, categoryId])
+}
+
+model BrandLocation {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  brandId       String   @db.Uuid
+  locationName  String?
+  addressLine1  String?
+  addressLine2  String?
+  city          String?
+  state         String?
+  postalCode    String?
+  country       String?
+  coordinates   Unsupported("geography(point)?")?
+  phone         String?
+  email         String?
+  openingHours  Json?
+  isHeadquarters Boolean @default(false)
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+
+  brand Brand @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([coordinates])
+}
+
+model BrandContact {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  brandId    String   @db.Uuid
+  name       String
+  position   String?
+  email      String?
+  phone      String?
+  isPrimary  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  brand Brand @relation(fields: [brandId], references: [id], onDelete: Cascade)
+}
+
+model BrandAnalytics {
+  brandId                String   @id @db.Uuid
+  totalFollowers         Int      @default(0)
+  totalImpressions       Int      @default(0)
+  totalEngagements       Int      @default(0)
+  totalCapDistributed    Int      @default(0)
+  totalCampaigns         Int      @default(0)
+  totalRooms             Int      @default(0)
+  avgEngagementRate      Float    @default(0)
+  date                   DateTime @db.Date
+  updatedAt              DateTime @updatedAt
+
+  brand Brand @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@unique([brandId, date])
+}
+
+// =====================================================
+// 4. CAMPAIGNS & ADS DOMAIN
+// =====================================================
+
+model Campaign {
+  id                 String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  brandId            String   @db.Uuid
+  name               String
+  slug               String
+  description        String?
+  objective          CampaignObjective
+  status             CampaignStatus @default(DRAFT)
+  startDate          DateTime
+  endDate            DateTime
+  timezone           String   @default("UTC")
+  totalBudget        Float
+  dailyBudget        Float?
+  currency           String   @default("USD")
+  capConversionRate  Float    @default(100)
+  targeting          Json?
+  createdBy          String?  @db.Uuid
+  approvedBy         String?  @db.Uuid
+  approvedAt         DateTime?
+  startedAt          DateTime?
+  endedAt            DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  deletedAt          DateTime?
+
+  brand   Brand  @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  creator User?  @relation("campaignCreator", fields: [createdBy], references: [id])
+  approver User? @relation("campaignApprover", fields: [approvedBy], references: [id])
+
+  targets         CampaignTarget[]
+  schedules       CampaignSchedule[]
+  budgets         CampaignBudget?
+  capAllocations  CampaignCapAllocation?
+  ads             Ad[]
+  metrics         CampaignMetric[]
+  activityLogs    CampaignActivityLog[]
+  conversions     ConversionMetric[]
+
+  @@index([brandId])
+  @@index([status])
+  @@index([startDate, endDate])
+}
+
+model CampaignTarget {
+  id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  campaignId     String   @db.Uuid
+  targetType     String   // location, age, gender, interest, behavior, device, time
+  targetValue    Json
+  inclusionType  String   @default("include") // include, exclude
+  createdAt      DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+}
+
+model CampaignSchedule {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  campaignId  String   @db.Uuid
+  dayOfWeek   Int[]    // 0-6 (0=Sunday)
+  startTime   String?  // TIME format
+  endTime     String?  // TIME format
+  timezone    String?
+  isActive    Boolean  @default(true)
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+}
+
+model CampaignBudget {
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  campaignId       String   @unique @db.Uuid
+  totalBudget      Float
+  spentBudget      Float    @default(0)
+  reservedBudget   Float    @default(0)
+  dailyBudget      Float?
+  dailySpent       Float    @default(0)
+  dailyResetDate   DateTime? @db.Date
+  lastResetAt      DateTime?
+  currency         String   @default("USD")
+  updatedAt        DateTime @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+}
+
+model CampaignCapAllocation {
+  id                  String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  campaignId          String   @unique @db.Uuid
+  totalCapAllocated   Int
+  capSpent            Int      @default(0)
+  capRemaining        Int      @default(0) // Will be generated
+  lastDistribution    DateTime?
+  updatedAt           DateTime @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+}
+
+model CampaignMetric {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  campaignId      String   @db.Uuid
+  date            DateTime @db.Date
+  impressions     Int      @default(0)
+  clicks          Int      @default(0)
+  ctr             Float    @default(0)
+  engagements     Int      @default(0)
+  engagementRate  Float    @default(0)
+  capSpent        Int      @default(0)
+  conversions     Int      @default(0)
+  conversionValue Float    @default(0)
+  reach           Int      @default(0)
+  frequency       Float    @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, date])
+}
+
+model CampaignActivityLog {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  campaignId  String   @db.Uuid
+  userId      String?  @db.Uuid
+  action      String   // CREATE, UPDATE, DELETE, LAUNCH, PAUSE, END
+  details     Json?
+  createdAt   DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  user     User?    @relation(fields: [userId], references: [id])
+}
+
+model Ad {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  campaignId      String   @db.Uuid
+  name            String
+  type            AdType
+  format          String?
+  content         Json
+  destinationUrl  String?
+  callToAction    String?
+  rewardWeights   Json?
+  status          String   @default("draft")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  assets           AdAsset[]
+  impressions      AdImpression[]
+  clicks           AdClick[]
+  metrics          AdMetric[]
+  rankingScores    AdRankingScore[]
+  categoryMapping  AdCategoryMapping[]
+  tagMapping       AdTagMapping[]
+  locations        AdLocation[]
+}
+
+model AdAsset {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  adId        String   @db.Uuid
+  assetType   String   // video, image, thumbnail, audio
+  assetUrl    String
+  assetSize   Int?
+  mimeType    String?
+  width       Int?
+  height      Int?
+  duration    Int?
+  altText     String?
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  ad Ad @relation(fields: [adId], references: [id], onDelete: Cascade)
+}
+
+model AdImpression {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  adId       String   @db.Uuid
+  userId     String?  @db.Uuid
+  sessionId  String?  @db.Uuid
+  ipAddress  String?  @db.Inet
+  userAgent  String?
+  deviceType String?
+  location   Unsupported("geography(point)?")?
+  viewedAt   DateTime @default(now())
+
+  ad      Ad            @relation(fields: [adId], references: [id], onDelete: Cascade)
+  user    User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  session UserSession?  @relation(fields: [sessionId], references: [id])
+
+  @@index([adId, viewedAt])
+  @@index([userId])
+}
+
+model AdClick {
+  id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  adId           String   @db.Uuid
+  userId         String?  @db.Uuid
+  sessionId      String?  @db.Uuid
+  ipAddress      String?  @db.Inet
+  userAgent      String?
+  deviceType     String?
+  location       Unsupported("geography(point)?")?
+  destinationUrl String?
+  clickedAt      DateTime @default(now())
+
+  ad      Ad            @relation(fields: [adId], references: [id], onDelete: Cascade)
+  user    User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  session UserSession?  @relation(fields: [sessionId], references: [id])
+
+  @@index([adId])
+  @@index([userId])
+}
+
+model AdMetric {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  adId            String   @db.Uuid
+  date            DateTime @db.Date
+  impressions     Int      @default(0)
+  clicks          Int      @default(0)
+  ctr             Float    @default(0)
+  views           Int      @default(0)
+  avgViewDuration Float?   // Average view duration in seconds
+  completionRate  Float?   // Percentage of video watched
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  ad Ad @relation(fields: [adId], references: [id], onDelete: Cascade)
+
+  @@unique([adId, date])
+}
+
+model AdCategory {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  categoryId  String   @unique // CAT-01, CAT-02 etc
+  name        String
+  description String?
+  iconUrl     String?
+  parentId    String?  @db.Uuid
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  parent   AdCategory?          @relation("adCategoryParent", fields: [parentId], references: [id])
+  children AdCategory[]         @relation("adCategoryParent")
+  ads      AdCategoryMapping[]
+}
+
+model AdCategoryMapping {
+  adId       String @db.Uuid
+  categoryId String @db.Uuid
+
+  ad       Ad         @relation(fields: [adId], references: [id], onDelete: Cascade)
+  category AdCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([adId, categoryId])
+}
+
+model AdTag {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String   @unique
+  usageCount  Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  ads AdTagMapping[]
+}
+
+model AdTagMapping {
+  adId String @db.Uuid
+  tagId String @db.Uuid
+
+  ad  Ad     @relation(fields: [adId], references: [id], onDelete: Cascade)
+  tag AdTag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([adId, tagId])
+}
+
+model AdLocation {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  adId          String   @db.Uuid
+  locationType  String   // country, region, city, radius
+  locationValue Json
+  radiusKm      Int?
+  createdAt     DateTime @default(now())
+
+  ad Ad @relation(fields: [adId], references: [id], onDelete: Cascade)
+}
+
+model AdRankingScore {
+  adId        String   @db.Uuid
+  userId      String   @db.Uuid
+  rankScore   Float    @default(0)
+  factors     Json?
+  expiresAt   DateTime?
+  calculatedAt DateTime @default(now())
+
+  ad   Ad   @relation(fields: [adId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([adId, userId])
+  @@index([userId, rankScore])
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Started - VIRAZ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f7;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .campaign-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .campaign-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .campaign-dates {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f5576c;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .progress-bar {
+            background: #f0f0f0;
+            height: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            height: 100%;
+            width: {{progress}}%;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .tips-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .tips-list li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Campaign Started!</h1>
+        </div>
+        
+        <div class="content">
+            <h2 style="text-align: center;">Great news, {{name}}!</h2>
+            
+            <p style="text-align: center;">Your campaign is now live and reaching audiences.</p>
+            
+            <div class="campaign-banner">
+                <div class="campaign-name">{{campaignName}}</div>
+                <div class="campaign-dates">{{startDate}} - {{endDate}}</div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">${{budget}}</div>
+                    <div class="stat-label">Budget</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{{dailyBudget}}</div>
+                    <div class="stat-label">Daily Budget</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{{targetReach}}</div>
+                    <div class="stat-label">Target Reach</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{{adsCount}}</div>
+                    <div class="stat-label">Active Ads</div>
+                </div>
+            </div>
+            
+            <h3>Campaign Progress</h3>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 5px;">{{progress}}% of budget allocated</p>
+            
+            <div class="tips-list">
+                <h4 style="margin-top: 0;">💡 Tips for Success:</h4>
+                <ul>
+                    <li>Monitor your campaign dashboard regularly</li>
+                    <li>Adjust targeting based on early performance</li>
+                    <li>Engage with users who comment on your ads</li>
+                    <li>Consider A/B testing different ad creatives</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{{campaignUrl}}" class="button">View Campaign Dashboard</a>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #e8f4fd; border-radius: 8px;">
+                <p style="margin: 0;"><strong>🔔 Notifications:</strong> We'll send you updates when your campaign reaches important milestones.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Need help optimizing your campaign? Contact our support team at <a href="mailto:support@viraz.com">support@viraz.com</a></p>
+            <p>&copy; 2024 VIRAZ Platform. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

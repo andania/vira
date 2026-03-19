@@ -1,0 +1,10 @@
+📊 Campaign Update: {{campaignName}}
+{{campaignName}} has reached {{percent}}% of its goal!
+
+Impressions: {{impressions}}
+Engagements: {{engagements}}
+CAP spent: {{capSpent}}
+
+View dashboard: {{campaignUrl}}
+
+- VIRAZ Ads

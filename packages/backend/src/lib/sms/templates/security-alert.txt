@@ -1,0 +1,9 @@
+🔐 Security Alert: {{action}} on your VIRAZ account
+📍 Location: {{location}}
+📱 Device: {{device}}
+🕐 Time: {{time}}
+
+If this was you, you can ignore this message.
+If not, secure your account immediately: {{securityUrl}}
+
+- VIRAZ Security Team

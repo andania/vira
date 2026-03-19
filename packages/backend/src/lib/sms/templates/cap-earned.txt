@@ -1,0 +1,7 @@
+🎉 You earned {{amount}} CAP!
+Action: {{action}}
+New balance: {{newBalance}} CAP
+
+Keep engaging to earn more!
+
+- VIRAZ Rewards

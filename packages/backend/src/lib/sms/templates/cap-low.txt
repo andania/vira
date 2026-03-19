@@ -1,0 +1,11 @@
+⚠️ Your CAP balance is running low
+Current balance: {{balance}} CAP
+
+Earn more CAP by:
+• Watching ads (30 CAP each)
+• Joining live rooms (70 CAP each)
+• Referring friends (100 CAP each)
+
+Start earning: {{earnUrl}}
+
+- VIRAZ Team

@@ -1,0 +1,1875 @@
+{\rtf1\fbidis\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}{\f2\fnil\fcharset1 Segoe UI Symbol;}{\f3\fnil\fcharset1 Cambria Math;}{\f4\fnil\fcharset1 Segoe UI Symbol;}{\f5\fnil\fcharset1 Segoe UI Emoji;}}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mmathFont3\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 VIRAZ PLATFORM - PRODUCT REQUIREMENTS DOCUMENT (PRD)\par
+Version: 1.0\par
+Date: March 13, 2026\par
+Status: Final Draft\par
+Document Owner: Andani Abdulai\par
+\par
+EXECUTIVE SUMMARY\par
+Viraz is a revolutionary dual-sided platform connecting Sponsors (advertisers) and Users (audience) through an interactive, reward-based advertising ecosystem. The core innovation is the "Billboard" \f1\endash  a discovery page for interactive "Rooms" where users earn Convertible Accumulated Points (CAP) for genuine engagement. This creates a high-attention environment for sponsors and a rewarding experience for users, effectively transforming passive advertising into an interactive economy.\par
+\par
+TABLE OF CONTENTS\par
+Platform Overview\par
+\par
+Core Features & Modules\par
+\par
+Ad Category System\par
+\par
+Economic Model & CAP System\par
+\par
+Gamification & User Ranks\par
+\par
+Technical Architecture\par
+\par
+Security & Compliance\par
+\par
+Launch Strategy\par
+\par
+Risk Management\par
+\par
+Appendices\par
+\par
+1.0 PLATFORM OVERVIEW\par
+1.1 Vision Statement\par
+To create the world's first engagement economy where attention is fairly rewarded and advertising becomes genuinely interactive and valuable for all parties.\par
+\par
+1.2 Platform Mission\par
+Connect brands with highly engaged audiences through rewarding interactions, while providing users with a meaningful way to earn from their attention and participation.\par
+\par
+1.3 Key Value Propositions\par
+For Users:\par
+\par
+Earn real value (CAP) for everyday engagement\par
+\par
+Discover new products and brands interactively\par
+\par
+Influence brand decisions through suggestions\par
+\par
+Build reputation and influence\par
+\par
+Purchase products with earned points\par
+\par
+For Sponsors:\par
+\par
+Pay only for verified, genuine engagement\par
+\par
+Receive direct feedback from target audience\par
+\par
+Build authentic brand communities\par
+\par
+Access detailed analytics and insights\par
+\par
+Convert engaged users into customers\par
+\par
+2.0 CORE FEATURES & MODULES\par
+2.1 Account Management Module\par
+Actors: User, Sponsor, Admin, System\par
+\par
+Features:\par
+2.1.1 Registration & Authentication\par
+\par
+Separate registration flows for Users and Sponsors\par
+\par
+Email and phone number registration\par
+\par
+Social login integration (Google, Facebook, Apple)\par
+\par
+Multi-factor authentication option\par
+\par
+Session management across devices\par
+\par
+2.1.2 Verification System\par
+\par
+Email verification (OTP)\par
+\par
+SMS phone verification\par
+\par
+Optional ID verification for high-value withdrawals\par
+\par
+Business verification for sponsors (KYC/KYB)\par
+\par
+Automated verification status tracking\par
+\par
+2.1.3 Profile Management\par
+\par
+Feature\tab User\tab Sponsor\par
+Profile Photo\tab\f2\u9989?\f0\tab\f2\u9989?\f0\par
+Bio/Description\tab\f2\u9989?\f0\tab\f2\u9989?\f0\par
+Interests Selection\tab\f2\u9989?\f0\tab\f2\u10060?\f0\par
+Notification Preferences\tab\f2\u9989?\f0\tab\f2\u9989?\f0\par
+Privacy Settings\tab\f2\u9989?\f0\tab\f2\u9989?\f0\par
+Business Details\tab\f2\u10060?\f0\tab\f2\u9989?\f0\par
+Payment Methods\tab\f2\u9989?\f0\tab\f2\u9989?\f0\par
+Verification Badges\tab\f2\u9989?\f0\tab\f2\u9989?\f0\par
+2.1.4 Password & Security\par
+\par
+Secure password reset flow\par
+\par
+Login attempt monitoring\par
+\par
+Suspicious activity alerts\par
+\par
+Device management dashboard\par
+\par
+Active session viewer\par
+\par
+2.2 Brand & Room Management Module (Sponsor)\par
+Actors: Sponsor, Brand Manager, Host\par
+\par
+Features:\par
+2.2.1 Brand Creation\par
+\par
+Create multiple brands under one sponsor account\par
+\par
+Brand profile setup:\par
+\par
+Logo (multiple sizes)\par
+\par
+Cover image/video\par
+\par
+Brand description\par
+\par
+Category selection\par
+\par
+Website/social links\par
+\par
+Contact information\par
+\par
+Brand verification status\par
+\par
+2.2.2 Room Management\par
+\par
+Room Types:\par
+\par
+Room Type\tab Purpose\tab Features\par
+Live Demo\tab Real-time product demonstration\tab Live video, chat, Q&A\par
+Product Showcase\tab Always-on product display\tab Gallery, specs, links\par
+Campaign Room\tab Time-limited campaigns\tab Ads, engagement tracking\par
+Community Room\tab Brand community hub\tab Discussions, announcements\par
+Event Room\tab Special events/launches\tab Scheduled programming\par
+Room Customization Options:\par
+\par
+Room name and description\par
+\par
+Banner image/video\par
+\par
+Scheduled availability\par
+\par
+Capacity limits\par
+\par
+Host assignment\par
+\par
+Moderator permissions\par
+\par
+Featured products\par
+\par
+Welcome message\par
+\par
+Entry requirements (e.g., minimum rank)\par
+\par
+2.2.3 Moderation Tools\par
+\par
+Real-time chat moderation\par
+\par
+User muting/blocking\par
+\par
+Spam detection\par
+\par
+Automated filter settings\par
+\par
+Report review dashboard\par
+\par
+Ban/unban users\par
+\par
+2.3 Billboard & Ad Discovery Module\par
+Actors: User, System\par
+\par
+Features:\par
+2.3.1 Main Billboard Feed\par
+The primary discovery interface showing personalized ad and room recommendations.\par
+\par
+Feed Algorithm Factors:\par
+\par
+User interests and preferences\par
+\par
+Engagement history\par
+\par
+Geographic location\par
+\par
+Time of day\par
+\par
+Trending content\par
+\par
+Sponsor targeting settings\par
+\par
+User rank (premium content for higher ranks)\par
+\par
+2.3.2 Ad Format Support\par
+\par
+Format\tab Description\tab Engagement Options\par
+Video Ads\tab 15-60 second videos\tab Watch, like, share, comment\par
+Image Ads\tab Static or carousel images\tab Click, like, share\par
+Text Ads\tab Rich text with formatting\tab Read, click link\par
+Live Ads\tab Live streaming content\tab Watch, chat, react\par
+Interactive Ads\tab Polls, quizzes, AR try-on\tab Participate, submit\par
+Product Cards\tab Direct product showcases\tab View, save, purchase\par
+2.3.3 Discovery Sections\par
+\par
+Trending Now: Most engaged content\par
+\par
+Near You: Geographically relevant ads\par
+\par
+Just Launched: New campaigns\par
+\par
+For You: AI-personalized recommendations\par
+\par
+Live Now: Currently streaming rooms\par
+\par
+Top Earners: Highest CAP-earning opportunities\par
+\par
+Categories: Browse by ad category\par
+\par
+2.3.4 Search Functionality\par
+\par
+Search brands, rooms, products, users\par
+\par
+Filter by category, location, format\par
+\par
+Sort by relevance, popularity, newest\par
+\par
+Saved searches and alerts\par
+\par
+2.4 Engagement & Interaction Module\par
+Actors: User, Host, System\par
+\par
+Features:\par
+2.4.1 In-Room Actions\par
+\par
+Action\tab Description\tab CAP Reward Weight\par
+View Content\tab Watch video/live stream for minimum duration\tab 30 CAP\par
+Like\tab React positively to content\tab 10 CAP\par
+Comment\tab Post text feedback\tab 20 CAP\par
+Share\tab Share room externally or internally\tab 40 CAP\par
+Click Link\tab Visit sponsor link\tab 50 CAP\par
+Suggest Improvement\tab Provide constructive feedback\tab 60 CAP\par
+Participate in Poll\tab Vote in sponsor polls\tab 25 CAP\par
+Complete Quiz\tab Answer brand questions\tab 45 CAP\par
+Save Product\tab Save for later viewing\tab 15 CAP\par
+Invite Friend\tab Bring new user to room\tab 35 CAP\par
+Follow Brand\tab Subscribe to brand updates\tab 5 CAP\par
+Report Issue\tab Flag inappropriate content\tab 10 CAP\par
+2.4.2 Live Room Features\par
+\par
+Real-time video streaming\par
+\par
+Low-latency chat\par
+\par
+Emoji reactions ("Sparks")\par
+\par
+Raised hand for Q&A\par
+\par
+Screen sharing (host)\par
+\par
+Product spotlight\par
+\par
+Live poll creation\par
+\par
+Viewer count and list\par
+\par
+Host controls\par
+\par
+2.4.3 Social Features\par
+\par
+Follow/unfollow brands\par
+\par
+Friend system\par
+\par
+Share to external platforms\par
+\par
+Tag users in comments\par
+\par
+Mention brands\par
+\par
+Create user groups\par
+\par
+Private messaging (opt-in)\par
+\par
+2.4.4 User Visibility & Presence\par
+\par
+See active participants in rooms\par
+\par
+View friend activity\par
+\par
+See who's watching live\par
+\par
+Anonymous viewing option\par
+\par
+Do Not Disturb mode\par
+\par
+2.5 CAP Wallet & Financial System\par
+Actors: User, Sponsor, System, Admin\par
+\par
+Features:\par
+2.5.1 CAP Wallet Structure\par
+\par
+User Wallet Components:\par
+\par
+text\par
+\f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f0\par
+\f2\u9474?\f1  \f0 USER WALLET                     \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f0 CAP Balance: 15,450 CAP         \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 Fiat Balance: $25.50             \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 Total Value: $102.75             \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f0 Recent Transactions:             \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 +50 CAP - Watched Samsung Ad    \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 +20 CAP - Commented on Nike      \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 -500 CAP - Bought Coffee Mug     \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 +$10.00 - Deposited from Card    \f2\u9474?\f0\par
+\f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f0\par
+Sponsor Wallet Components:\par
+\par
+text\par
+\f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f0\par
+\f2\u9474?\f1  \f0 SPONSOR WALLET                  \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f0 Fiat Balance: $5,000             \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 CAP Budget: 500,000 CAP          \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 Reserved CAP: 150,000 CAP         \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 Spent CAP: 350,000 CAP            \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f0 Active Campaigns: 3              \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 Total Reach: 45,000 users        \f2\u9474?\f0\par
+\f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f0\par
+2.5.2 CAP Earning Mechanisms\par
+\par
+Dynamic CAP Valuation:\par
+\par
+text\par
+Base CAP Value = Total Sponsor Deposits / Total CAP in Circulation\par
+Example:\par
+- Total sponsor deposits: $100,000\par
+- Total CAP issued: 20,000,000\par
+- Base CAP Value: $0.005 per CAP\par
+Earning Safeguards:\par
+\par
+Daily earning caps based on user rank\par
+\par
+Verification requirements for high earnings\par
+\par
+Anti-fraud monitoring\par
+\par
+Suspicious activity limits\par
+\par
+Cooldown periods between actions\par
+\par
+2.5.3 CAP Spending Options\par
+\par
+Spending Category\tab Examples\tab CAP Required\par
+Digital Goods\tab Stickers, badges, filters\tab 50-500 CAP\par
+Physical Products\tab Merchandise, samples\tab 500-50,000 CAP\par
+Services\tab Consultations, bookings\tab 1,000+ CAP\par
+Discounts\tab Coupons, promo codes\tab 100-1,000 CAP\par
+Experiences\tab Event access, meetups\tab 5,000+ CAP\par
+Donations\tab Charity contributions\tab Any amount\par
+2.5.4 Hybrid Payments\par
+Users can combine CAP and fiat currency:\par
+\par
+text\par
+Product Price: $100\par
+Option 1: Pay 10,000 CAP (if CAP = $0.01)\par
+Option 2: Pay 5,000 CAP + $50\par
+Option 3: Pay $100 cash\par
+2.5.5 Deposit Methods\par
+\par
+Credit/debit cards\par
+\par
+Mobile money\par
+\par
+Bank transfers\par
+\par
+Cryptocurrency (future)\par
+\par
+Digital wallets (PayPal, Apple Pay)\par
+\par
+2.5.6 Withdrawal System\par
+\par
+Minimum withdrawal: $10 or equivalent\par
+\par
+Processing time: 1-5 business days\par
+\par
+Withdrawal fees: 2% (covers payment processing)\par
+\par
+KYC requirements based on amount:\par
+\par
+<$100: Phone verified\par
+\par
+$100-$1,000: ID verified\par
+\par
+$1,000: Full KYC + bank verification\par
+\par
+2.5.7 CAP Decay Policy\par
+To encourage spending and economic health:\par
+\par
+CAP inactive for 12 months: 10% annual decay\par
+\par
+Inactive for 24 months: 25% annual decay\par
+\par
+Inactive for 36+ months: Subject to forfeiture\par
+\par
+Active users exempt from decay\par
+\par
+2.6 Campaign Management Module (Sponsor)\par
+Actors: Sponsor, Campaign Manager, System\par
+\par
+Features:\par
+2.6.1 Campaign Creation Workflow\par
+\par
+text\par
+Step 1: Campaign Basics\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Campaign name\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Select brand\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Choose room(s)\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Campaign objective\par
+\f2\u9492?\u9472?\u9472?\f1  \f0 Target audience\par
+\par
+Step 2: Budget & Schedule\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Total budget (fiat)\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 CAP conversion rate\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Start date/time\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 End date/time\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Daily spending limit\par
+\f2\u9492?\u9472?\u9472?\f1  \f0 CAP distribution rules\par
+\par
+Step 3: Content & Format\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Ad format selection\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Upload creative assets\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Call-to-action\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Landing page/URL\par
+\f2\u9492?\u9472?\u9472?\f1  \f0 Tracking pixels\par
+\par
+Step 4: Engagement Settings\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 CAP rewards per action\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Bonus CAP for top engagers\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Special offers\par
+\f2\u9492?\u9472?\u9472?\f1  \f0 Engagement goals\par
+\par
+Step 5: Review & Launch\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Campaign preview\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Cost summary\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Terms acceptance\par
+\f2\u9492?\u9472?\u9472?\f1  \f0 Launch campaign\par
+2.6.2 Campaign Types\par
+\par
+Campaign Type\tab Best For\tab Duration\tab Engagement Focus\par
+Brand Awareness\tab New products/companies\tab 7-30 days\tab Views, shares\par
+Lead Generation\tab Service businesses\tab 14-60 days\tab Link clicks, forms\par
+Direct Sales\tab E-commerce\tab 3-14 days\tab Purchases, saves\par
+Community Building\tab Ongoing engagement\tab 30+ days\tab Comments, follows\par
+Event Promotion\tab Launches, sales\tab 1-7 days\tab RSVPs, shares\par
+Feedback Collection\tab Product improvement\tab 7-21 days\tab Suggestions, polls\par
+2.6.3 Campaign Dashboard\par
+\par
+Real-time Metrics:\par
+\par
+Impressions\par
+\par
+Reach (unique users)\par
+\par
+Engagement rate\par
+\par
+CAP distributed\par
+\par
+Cost per engagement\par
+\par
+Click-through rate (CTR)\par
+\par
+Conversion rate\par
+\par
+ROI estimate\par
+\par
+Performance Visualizations:\par
+\par
+Engagement over time chart\par
+\par
+Geographic heatmap\par
+\par
+Demographic breakdown\par
+\par
+Device type distribution\par
+\par
+Top performing content\par
+\par
+Hourly activity patterns\par
+\par
+2.6.4 A/B Testing Tools\par
+\par
+Test two ad versions simultaneously\par
+\par
+Compare engagement rates\par
+\par
+Optimize CAP allocation\par
+\par
+Automated winner selection\par
+\par
+Performance reports\par
+\par
+2.7 User Dashboard Module\par
+Actors: User\par
+\par
+Features:\par
+2.7.1 Dashboard Overview\par
+\par
+text\par
+\f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f0\par
+\f2\u9474?\f1  \f0 WELCOME BACK, ALEX!                     \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f0 CAP BALANCE: 15,450 CAP  \f3\u8593?\f1  \f0 +2,350 today \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 FIAT BALANCE: $25.50                     \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 TOTAL VALUE: $102.75                      \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 RANK: INFLUENCER (Level 4/6) \f2\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9617?\u9617?\u9617?\u9617?\f1  \f0 65%\f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f0 QUICK ACTIONS:                           \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 [Deposit] [Withdraw] [Browse] [Invite]   \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f0 TODAY'S EARNINGS: 350 CAP                \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Watched 5 videos: 150 CAP              \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Commented 8 times: 160 CAP             \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Shared 1 ad: 40 CAP                    \f2\u9474?\f0\par
+\f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f0\par
+2.7.2 Detailed Sections\par
+\par
+Activity History:\par
+\par
+Timeline of all engagements\par
+\par
+CAP earned per activity\par
+\par
+Campaigns participated in\par
+\par
+Filter by date, type, amount\par
+\par
+Purchases:\par
+\par
+Items bought with CAP\par
+\par
+Order status tracking\par
+\par
+Delivery information\par
+\par
+Return/refund requests\par
+\par
+Purchase history\par
+\par
+Analytics:\par
+\par
+Personal engagement rate\par
+\par
+Top performing activities\par
+\par
+Best earning times\par
+\par
+Brand affinity scores\par
+\par
+Recommendation quality feedback\par
+\par
+Network:\par
+\par
+Followed brands\par
+\par
+Friends list\par
+\par
+Invited users & rewards\par
+\par
+Group memberships\par
+\par
+Settings:\par
+\par
+Profile management\par
+\par
+Notification preferences\par
+\par
+Privacy controls\par
+\par
+Connected accounts\par
+\par
+Two-factor authentication\par
+\par
+2.8 Targeting & Analytics Module (Sponsor)\par
+Actors: Sponsor, System\par
+\par
+Features:\par
+2.8.1 Targeting Options\par
+\par
+Geographic Targeting:\par
+\par
+text\par
+Levels:\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Global\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Continent (e.g., Africa, Europe)\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Country (e.g., Ghana, Nigeria)\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 Region/State (e.g., Greater Accra)\par
+\f2\u9500?\u9472?\u9472?\f1  \f0 City (e.g., Accra)\par
+\f2\u9492?\u9472?\u9472?\f1  \f0 Radius (e.g., 20km around a point)\par
+\par
+Example:\par
+Campaign: Local Restaurant Ad\par
+Target: Ghana \f3\u8594?\f1  \f0 Greater Accra \f3\u8594?\f1  \f0 Accra \f3\u8594?\f1  \f0 10km radius\par
+Demographic Targeting:\par
+\par
+Age ranges (18-24, 25-34, 35-44, 45-54, 55+)\par
+\par
+Gender (Male, Female, Non-binary, All)\par
+\par
+Income brackets (where available)\par
+\par
+Education level\par
+\par
+Employment status\par
+\par
+Interest-Based Targeting:\par
+\par
+Technology\par
+\par
+Fashion & Beauty\par
+\par
+Automotive\par
+\par
+Health & Wellness\par
+\par
+Sports & Fitness\par
+\par
+Gaming\par
+\par
+Travel\par
+\par
+Food & Dining\par
+\par
+Education\par
+\par
+Real Estate\par
+\par
+Finance\par
+\par
+Entertainment\par
+\par
+Behavioral Targeting:\par
+\par
+Users who watched tech videos\par
+\par
+Frequent live room participants\par
+\par
+High commenters\par
+\par
+Product purchasers\par
+\par
+Brand followers\par
+\par
+Suggestion providers\par
+\par
+Time-Based Targeting:\par
+\par
+Specific dates\par
+\par
+Time of day (e.g., 6 PM - 10 PM)\par
+\par
+Days of week\par
+\par
+Timezone-aware delivery\par
+\par
+Device Targeting:\par
+\par
+Mobile (iOS/Android)\par
+\par
+Desktop\par
+\par
+Tablet\par
+\par
+Connection type (WiFi/Mobile data)\par
+\par
+2.8.2 Smart Recommendation System\par
+AI-powered audience suggestions:\par
+\par
+text\par
+"Based on your ad content, we recommend:\par
+- Target age: 25-34 (highest engagement for similar ads)\par
+- Top countries: Nigeria, Ghana, Kenya\par
+- Best times: Weekdays 7-9 PM\par
+- Estimated reach: 50,000-75,000 users\par
+- Suggested budget: $500-$800"\par
+2.8.3 Analytics Dashboard\par
+\par
+Key Metrics:\par
+\par
+Impressions: Total ad views\par
+\par
+Reach: Unique users reached\par
+\par
+Engagement Rate: Interactions/impressions\par
+\par
+CAP Efficiency: CAP spent per engagement\par
+\par
+Conversion Rate: Desired actions completed\par
+\par
+Cost per Result: $ per conversion\par
+\par
+ROAS: Return on ad spend\par
+\par
+Advanced Analytics:\par
+\par
+Funnel analysis (view \f3\u8594?\f1  \f0 engage \f3\u8594?\f1  \f0 convert)\par
+\par
+Attribution modeling\par
+\par
+Cohort analysis\par
+\par
+Lifetime value tracking\par
+\par
+Competitive benchmarking\par
+\par
+2.9 Marketplace Module\par
+Actors: User, Sponsor, System\par
+\par
+Features:\par
+2.9.1 Product Listings\par
+\par
+Product Information:\par
+\par
+Title and description\par
+\par
+High-quality images/video\par
+\par
+Price (CAP and/or fiat)\par
+\par
+Stock availability\par
+\par
+Shipping information\par
+\par
+Seller rating\par
+\par
+Return policy\par
+\par
+2.9.2 Shopping Experience\par
+\par
+Discovery:\par
+\par
+Browse by category\par
+\par
+Filter by price, brand, rating\par
+\par
+Search products\par
+\par
+Personalized recommendations\par
+\par
+Trending products\par
+\par
+Purchase Flow:\par
+\par
+text\par
+1. View product details\par
+2. Select quantity/options\par
+3. Choose payment method:\par
+   - 100% CAP\par
+   - Hybrid (CAP + fiat)\par
+   - 100% fiat\par
+4. Review order\par
+5. Confirm purchase\par
+6. Order confirmation\par
+7. Track delivery\par
+2.9.3 Order Management\par
+\par
+Order status updates\par
+\par
+Shipping tracking\par
+\par
+Delivery confirmation\par
+\par
+Return/refund requests\par
+\par
+Seller communication\par
+\par
+Purchase protection\par
+\par
+2.9.4 Reviews & Ratings\par
+\par
+Rate products (1-5 stars)\par
+\par
+Written reviews\par
+\par
+Photo/video reviews\par
+\par
+Helpful votes\par
+\par
+Verified purchase badge\par
+\par
+2.10 Trust & Safety Module\par
+Actors: User, Sponsor, System, Admin, Moderator\par
+\par
+Features:\par
+2.10.1 Anti-Fraud System\par
+\par
+Detection Mechanisms:\par
+\par
+AI behavior analysis\par
+\par
+Device fingerprinting\par
+\par
+IP tracking and analysis\par
+\par
+Pattern recognition\par
+\par
+Velocity checking\par
+\par
+Bot detection algorithms\par
+\par
+Fraud Types Prevented:\par
+\par
+Fake account creation\par
+\par
+Click farming\par
+\par
+Automated engagement\par
+\par
+CAP farming rings\par
+\par
+Fake sponsor accounts\par
+\par
+Payment fraud\par
+\par
+2.10.2 Identity Verification (KYC)\par
+\par
+Verification Levels:\par
+\par
+Level\tab Requirements\tab Benefits\par
+Basic\tab Phone + Email\tab Standard earning, $50 daily cap\par
+Enhanced\tab Government ID\tab Higher caps, withdrawals up to $1,000\par
+Full\tab ID + Proof of address + Video verification\tab Unlimited, sponsor eligibility\par
+2.10.3 Content Moderation\par
+\par
+Automated Moderation:\par
+\par
+Profanity filtering\par
+\par
+Spam detection\par
+\par
+Hate speech identification\par
+\par
+Harassment detection\par
+\par
+Inappropriate image scanning\par
+\par
+Link safety checking\par
+\par
+Human Moderation:\par
+\par
+Report review queue\par
+\par
+Appeal processing\par
+\par
+Escalated cases\par
+\par
+Content policy enforcement\par
+\par
+User ban reviews\par
+\par
+2.10.4 User Safety Tools\par
+\par
+User Controls:\par
+\par
+Block users\par
+\par
+Mute notifications\par
+\par
+Report content\par
+\par
+Hide from search\par
+\par
+Private mode\par
+\par
+Age restrictions\par
+\par
+Time limits (parental controls)\par
+\par
+2.10.5 Dispute Resolution\par
+\par
+Dispute Types:\par
+\par
+User vs. User\par
+\par
+User vs. Sponsor\par
+\par
+Sponsor vs. Sponsor\par
+\par
+Payment disputes\par
+\par
+Content disputes\par
+\par
+Resolution Process:\par
+\par
+text\par
+1. Complaint filed\par
+2. Evidence gathering\par
+3. Mediation attempt\par
+4. Review by moderators\par
+5. Decision & enforcement\par
+6. Appeal option\par
+2.11 Communication & Notification System\par
+Actors: All users\par
+\par
+Features:\par
+2.11.1 Notification Types\par
+\par
+Type\tab Examples\tab Channel\par
+Engagement\tab New comment, like, share\tab In-app, push\par
+Financial\tab CAP earned, withdrawal complete\tab In-app, email, SMS\par
+Campaign\tab New room starting, invitation\tab In-app, push\par
+System\tab Maintenance, policy updates\tab Email, in-app\par
+Promotional\tab Special offers, bonuses\tab In-app, email\par
+Alert\tab Suspicious login, limit reached\tab SMS, email\par
+2.11.2 Quiet Mode\par
+\par
+Schedule quiet hours\par
+\par
+Disable non-critical notifications\par
+\par
+Emergency override for security alerts\par
+\par
+Custom notification rules\par
+\par
+2.11.3 In-App Messaging\par
+\par
+User-to-user messaging (opt-in)\par
+\par
+Sponsor-to-user messaging (with limits)\par
+\par
+Read receipts\par
+\par
+Media sharing\par
+\par
+Message reporting\par
+\par
+Block functionality\par
+\par
+2.12 Administrative Module\par
+Actors: Admin, Super Admin, Moderator\par
+\par
+Features:\par
+2.12.1 Admin Dashboard\par
+\par
+Overview:\par
+\par
+Platform health metrics\par
+\par
+Active users count\par
+\par
+Total CAP in circulation\par
+\par
+Transaction volume\par
+\par
+Fraud detection alerts\par
+\par
+Pending reviews\par
+\par
+User Management:\par
+\par
+View/edit user accounts\par
+\par
+Suspend/ban users\par
+\par
+Verify identities\par
+\par
+Review reports\par
+\par
+Manage appeals\par
+\par
+Sponsor Management:\par
+\par
+Approve sponsor accounts\par
+\par
+Verify businesses\par
+\par
+Monitor campaign compliance\par
+\par
+Review ad content\par
+\par
+Handle sponsor reports\par
+\par
+Financial Oversight:\par
+\par
+Monitor CAP economy\par
+\par
+Review large transactions\par
+\par
+Audit withdrawals\par
+\par
+Track platform revenue\par
+\par
+Manage payment processors\par
+\par
+Content Moderation:\par
+\par
+Queue of reported content\par
+\par
+Bulk moderation tools\par
+\par
+Policy enforcement\par
+\par
+Appeal handling\par
+\par
+Moderator performance\par
+\par
+System Settings:\par
+\par
+Configure CAP rates\par
+\par
+Adjust earning limits\par
+\par
+Update policies\par
+\par
+Feature flags\par
+\par
+Maintenance mode\par
+\par
+3.0 AD CATEGORY SYSTEM\par
+3.1 Primary Categories\par
+Category ID\tab Category Name\tab Description\tab Examples\par
+CAT-01\tab Awareness Ads\tab Introduce brands/products\tab New company launch, brand storytelling\par
+CAT-02\tab Public Service Ads\tab Government/NGO information\tab Health campaigns, election info, safety alerts\par
+CAT-03\tab Product Launch Ads\tab New product introductions\tab Smartphone release, car model debut\par
+CAT-04\tab Sales & Promotions\tab Discounts and offers\tab Flash sales, seasonal discounts\par
+CAT-05\tab Live Demonstrations\tab Real-time product shows\tab Cooking demos, tech unboxings\par
+CAT-06\tab Recruitment Ads\tab Job opportunities\tab Job postings, career fairs\par
+CAT-07\tab Educational Ads\tab Learning content\tab Online courses, workshop promotions\par
+CAT-08\tab Community Ads\tab Local events\tab Charity events, festivals\par
+CAT-09\tab Marketplace Ads\tab Direct selling\tab Product listings, classifieds\par
+CAT-10\tab Sponsored Content\tab Influencer partnerships\tab Reviews, tutorials\par
+3.2 Billboard Organization\par
+Main Sections:\par
+\par
+text\par
+\f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f0\par
+\f2\u9474?\f1  \f0 VIRAZ BILLBOARD                      \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f4\u-10179?\u-8923?\f1  \f0 TRENDING NOW                      \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Live: Samsung Unpacked (2k watching)\f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  New: iPhone 15 Review              \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Near You: Local Restaurant Deal    \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f4\u-10179?\u-8966?\f1  \f0 LIVE DEMONSTRATIONS                \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Cooking with Chef Kojo             \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Tech Unboxing: Latest Gadgets      \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Fitness Equipment Showcase         \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f5\u-10180?\u-8201?\u-497?\f1  \f0 JUST LAUNCHED                      \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Nike Air Max Campaign              \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Government: Voter Registration     \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  New Course: Digital Marketing      \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1  \f5\u-10179?\u-8499?\u-497?\f1  \f0 MARKETPLACE                        \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Electronics                        \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Fashion                            \f2\u9474?\f0\par
+\f2\u9474?\f1  \bullet  Home & Living                      \f2\u9474?\f0\par
+\f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f0\par
+4.0 ECONOMIC MODEL & CAP SYSTEM\par
+4.1 CAP Economics Framework\par
+Core Principles:\par
+\par
+CAP derives value from sponsor deposits\par
+\par
+Value should be stable but can fluctuate\par
+\par
+Users should be incentivized to earn and spend\par
+\par
+Sponsors should see clear ROI\par
+\par
+Platform sustainability through transaction fees\par
+\par
+4.2 Dynamic CAP Valuation\par
+Valuation Formula:\par
+\par
+text\par
+CAP Value = (Total Sponsor Deposits + Platform Reserve) / Total CAP in Circulation\par
+\par
+Where:\par
+- Total Sponsor Deposits = All fiat money deposited for campaigns\par
+- Platform Reserve = 10% of deposits held for stability\par
+- Total CAP in Circulation = All CAP earned but not spent\par
+Example Scenarios:\par
+\par
+Scenario\tab Sponsor Deposits\tab CAP in Circulation\tab CAP Value\par
+Launch\tab $10,000\tab 1,000,000\tab $0.01\par
+Growth\tab $100,000\tab 15,000,000\tab $0.0067\par
+Maturity\tab $1,000,000\tab 80,000,000\tab $0.0125\par
+4.3 Earning Limits by Rank\par
+Rank\tab Daily CAP Cap\tab Monthly CAP Cap\tab Withdrawal Limit\par
+Explorer\tab 200 CAP\tab 5,000 CAP\tab $50/day\par
+Engager\tab 500 CAP\tab 12,000 CAP\tab $100/day\par
+Contributor\tab 1,000 CAP\tab 25,000 CAP\tab $250/day\par
+Influencer\tab 2,000 CAP\tab 50,000 CAP\tab $500/day\par
+Brand Ambassador\tab 5,000 CAP\tab 125,000 CAP\tab $1,000/day\par
+Viraz Champion\tab 10,000 CAP\tab 250,000 CAP\tab $2,500/day\par
+4.4 Transaction Fees\par
+Transaction Type\tab Fee\tab Notes\par
+User Deposit\tab 0%\tab Free to add money\par
+User Withdrawal\tab 2%\tab Covers payment processing\par
+CAP to Fiat Conversion\tab 1%\tab When converting to withdrawable balance\par
+Sponsor Deposit\tab 0%\tab Free to add funds\par
+CAP Distribution\tab 0%\tab No fee for rewarding users\par
+Marketplace Purchase\tab 5%\tab Paid by sponsor on CAP purchases\par
+Hybrid Purchase\tab 2.5%\tab Reduced fee for mixed payments\par
+4.5 CAP Reserve Requirements\par
+Sponsor Requirements:\par
+\par
+Minimum 20% reserve for active campaigns\par
+\par
+Reserve held in escrow until campaign completion\par
+\par
+Automatic top-up when reserve drops below 10%\par
+\par
+Refundable if campaign cancelled before start\par
+\par
+Platform Reserve:\par
+\par
+10% of all sponsor deposits held in stability fund\par
+\par
+Used to maintain CAP value during market fluctuations\par
+\par
+Insurance against fraud or sponsor default\par
+\par
+5.0 GAMIFICATION & USER RANKS\par
+5.1 Rank System Overview\par
+Rank Progression Factors:\par
+\par
+Total CAP earned (40% of score)\par
+\par
+Engagement consistency (20% of score)\par
+\par
+Quality of contributions (20% of score)\par
+\par
+Referrals & network (10% of score)\par
+\par
+Reputation from sponsors (10% of score)\par
+\par
+5.2 Detailed Rank Structure\par
+Level 1: Explorer\par
+Requirements:\par
+\par
+Create account\par
+\par
+Verify phone\par
+\par
+Watch 5 ads\par
+\par
+Join 3 rooms\par
+\par
+Benefits:\par
+\par
+Basic CAP earning\par
+\par
+Access to all public rooms\par
+\par
+Profile creation\par
+\par
+Follow up to 10 brands\par
+\par
+Daily CAP cap: 200\par
+\par
+Badge: ![Explorer Badge] - Bronze compass\par
+\par
+Level 2: Engager\par
+Requirements:\par
+\par
+Earn 1,000 total CAP\par
+\par
+Comment on 25 ads\par
+\par
+Share 10 ads\par
+\par
+7-day active streak\par
+\par
+Benefits:\par
+\par
+10% CAP bonus on all earnings\par
+\par
+Access to exclusive campaigns\par
+\par
+Create user groups\par
+\par
+Follow up to 25 brands\par
+\par
+Daily CAP cap: 500\par
+\par
+Badge: ![Engager Badge] - Silver star\par
+\par
+Level 3: Contributor\par
+Requirements:\par
+\par
+Earn 5,000 total CAP\par
+\par
+Submit 20 accepted suggestions\par
+\par
+90%+ engagement rate\par
+\par
+30-day active streak\par
+\par
+Benefits:\par
+\par
+20% CAP bonus\par
+\par
+Early access to new campaigns\par
+\par
+Priority support\par
+\par
+Beta feature access\par
+\par
+Follow unlimited brands\par
+\par
+Daily CAP cap: 1,000\par
+\par
+Badge: ![Contributor Badge] - Gold handshake\par
+\par
+Level 4: Influencer\par
+Requirements:\par
+\par
+Earn 25,000 total CAP\par
+\par
+50 accepted suggestions\par
+\par
+Refer 25 active users\par
+\par
+90-day active streak\par
+\par
+4.5+ reputation score\par
+\par
+Benefits:\par
+\par
+35% CAP bonus\par
+\par
+Verified influencer badge\par
+\par
+Direct sponsor invitations\par
+\par
+Sponsored travel opportunities\par
+\par
+Monthly bonus pool access\par
+\par
+Daily CAP cap: 2,000\par
+\par
+Badge: ![Influencer Badge] - Platinum megaphone\par
+\par
+Level 5: Brand Ambassador\par
+Requirements:\par
+\par
+Earn 100,000 total CAP\par
+\par
+100 accepted suggestions\par
+\par
+Refer 100 active users\par
+\par
+180-day active streak\par
+\par
+4.8+ reputation score\par
+\par
+Sponsor nominations\par
+\par
+Benefits:\par
+\par
+50% CAP bonus\par
+\par
+Brand ambassador badge\par
+\par
+Exclusive brand partnerships\par
+\par
+Revenue sharing on referrals\par
+\par
+VIP event access\par
+\par
+Dedicated account manager\par
+\par
+Daily CAP cap: 5,000\par
+\par
+Badge: ![Ambassador Badge] - Diamond handshake\par
+\par
+Level 6: Viraz Champion\par
+Requirements:\par
+\par
+Earn 500,000+ total CAP\par
+\par
+250+ accepted suggestions\par
+\par
+Refer 500+ active users\par
+\par
+365-day active streak\par
+\par
+4.9+ reputation score\par
+\par
+Community voted\par
+\par
+Benefits:\par
+\par
+100% CAP bonus (double earnings)\par
+\par
+Champion badge with halo effect\par
+\par
+Equity options (future)\par
+\par
+Platform decision input\par
+\par
+Featured profile\par
+\par
+Highest withdrawal limits\par
+\par
+Daily CAP cap: 10,000\par
+\par
+Badge: ![Champion Badge] - Ruby crown\par
+\par
+5.3 Achievement System\par
+Category Achievements:\par
+\par
+Achievement\tab Requirement\tab Reward\par
+First Blood\tab First 100 CAP\tab 50 bonus CAP\par
+Social Butterfly\tab Share 50 ads\tab 200 CAP + Badge\par
+Critic\tab 100 comments\tab 300 CAP + Badge\par
+Trendsetter\tab 50 accepted suggestions\tab 500 CAP + Badge\par
+Networker\tab Refer 10 friends\tab 200 CAP each\par
+Streak Master\tab 100-day streak\tab 1,000 CAP + Badge\par
+Explorer\tab Visit 100 unique brands\tab 300 CAP + Badge\par
+Collector\tab Save 50 products\tab 150 CAP\par
+Early Adopter\tab Join first 1,000 users\tab Exclusive badge\par
+Legend\tab All achievements completed\tab Special title\par
+Weekly Challenges:\par
+\par
+Weekend Warrior: Earn 200 CAP on Saturday/Sunday \f3\u8594?\f1  \f0 50 bonus CAP\par
+\par
+Explorer: Visit 5 new brands \f3\u8594?\f1  \f0 Exclusive badge\par
+\par
+Critic: Leave 10 suggestions \f3\u8594?\f1  \f0 Featured on leaderboard\par
+\par
+Viral: Get 50 shares on your shared content \f3\u8594?\f1  \f0 200 bonus CAP\par
+\par
+Helper: Answer 10 questions in rooms \f3\u8594?\f1  \f0 150 bonus CAP\par
+\par
+5.4 Leaderboards\par
+Leaderboard Types:\par
+\par
+Global Top Earners - All-time CAP earned\par
+\par
+Weekly Top Engagers - Current week activity\par
+\par
+Top Contributors - Most accepted suggestions\par
+\par
+Top Referrers - Most active referrals\par
+\par
+Brand Specific - Top engagers per brand\par
+\par
+Leaderboard Rewards:\par
+\par
+Position\tab Weekly Reward\tab Monthly Reward\par
+1st\tab 5,000 CAP\tab 25,000 CAP + Featured Profile\par
+2nd-5th\tab 2,000 CAP\tab 10,000 CAP\par
+6th-10th\tab 1,000 CAP\tab 5,000 CAP\par
+11th-25th\tab 500 CAP\tab 2,000 CAP\par
+26th-50th\tab 200 CAP\tab 1,000 CAP\par
+6.0 TECHNICAL ARCHITECTURE\par
+6.1 System Architecture Overview\par
+Microservices Architecture:\par
+\par
+text\par
+\f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f0\par
+\f2\u9474?\f1                     \f0 API GATEWAY                       \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1                                                        \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9474?\f1    \f0 User   \f2\u9474?\f1   \f2\u9474?\f1    \f0 Room   \f2\u9474?\f1   \f2\u9474?\f1   \f0 Wallet  \f2\u9474?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1                                                        \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9474?\f0 Campaign  \f2\u9474?\f1   \f2\u9474?\f1  \f0 Billboard\f2\u9474?\f1   \f2\u9474?\f0 Analytics \f2\u9474?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1                                                        \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1   \f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9474?\f0 Marketplace\f2\u9474?\f1   \f2\u9474?\f1  \f0 Payment  \f2\u9474?\f1   \f2\u9474?\f1    \f0 Chat   \f2\u9474?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1   \f2\u9474?\f1  \f0 Service  \f2\u9474?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1   \f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f1           \f2\u9474?\f0\par
+\f2\u9474?\f1                                                        \f2\u9474?\f0\par
+\f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f0\par
+\par
+\f1                      \f2\u9660?\f0\par
+\f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f0\par
+\f2\u9474?\f1                  \f0 MESSAGE QUEUE                        \f2\u9474?\f0\par
+\f2\u9474?\f1               \f0 (RabbitMQ / Kafka)                       \f2\u9474?\f0\par
+\f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f0\par
+\par
+\f1                      \f2\u9660?\f0\par
+\f2\u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\f0\par
+\f2\u9474?\f1                     \f0 DATABASES                          \f2\u9474?\f0\par
+\f2\u9500?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9516?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9516?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9508?\f0\par
+\f2\u9474?\f1   \f0 PostgreSQL   \f2\u9474?\f1     \f0 Redis        |   MongoDB         \f2\u9474?\f0\par
+\f2\u9474?\f1  \f0 (User data,   \f2\u9474?\f1  \f0 (Sessions,      | (Chat history,    \f2\u9474?\f0\par
+\f2\u9474?\f1   \f0 transactions)\f2\u9474?\f1   \f0 cache)         |  activity logs)   \f2\u9474?\f0\par
+\f2\u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9524?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9524?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\f0\par
+6.2 Technology Stack Recommendations\par
+Frontend:\par
+\par
+Mobile: React Native (iOS/Android)\par
+\par
+Web: React.js / Next.js\par
+\par
+State Management: Redux / MobX\par
+\par
+Real-time: Socket.io client\par
+\par
+Backend:\par
+\par
+API Gateway: Node.js / Express or GraphQL\par
+\par
+Microservices: Python (FastAPI) or Node.js\par
+\par
+Real-time: Socket.io / WebRTC\par
+\par
+Message Queue: RabbitMQ / Apache Kafka\par
+\par
+Databases:\par
+\par
+Primary: PostgreSQL (ACID compliance for transactions)\par
+\par
+Cache: Redis (sessions, real-time data)\par
+\par
+Analytics: MongoDB / Elasticsearch\par
+\par
+Time-series: InfluxDB (metrics)\par
+\par
+Cloud Infrastructure:\par
+\par
+Cloud Provider: AWS / Google Cloud / Azure\par
+\par
+Containerization: Docker\par
+\par
+Orchestration: Kubernetes\par
+\par
+CDN: CloudFront / Cloudflare\par
+\par
+Video Streaming: AWS IVS / Mux / Custom WebRTC\par
+\par
+DevOps:\par
+\par
+CI/CD: GitHub Actions / GitLab CI\par
+\par
+Monitoring: Prometheus + Grafana\par
+\par
+Logging: ELK Stack (Elasticsearch, Logstash, Kibana)\par
+\par
+APM: New Relic / Datadog\par
+\par
+6.3 Scalability Considerations\par
+Horizontal Scaling Strategy:\par
+\par
+Stateless services scale horizontally\par
+\par
+Database read replicas\par
+\par
+Sharding for high-volume data\par
+\par
+CDN for static assets\par
+\par
+Edge computing for personalization\par
+\par
+Performance Targets:\par
+\par
+Billboard load: < 2 seconds\par
+\par
+Live video latency: < 3 seconds\par
+\par
+CAP transaction confirmation: < 1 second\par
+\par
+99.9% uptime for core services\par
+\par
+Support 1M+ concurrent users\par
+\par
+7.0 SECURITY & COMPLIANCE\par
+7.1 Security Architecture\par
+Data Protection:\par
+\par
+Encryption at rest (AES-256)\par
+\par
+Encryption in transit (TLS 1.3)\par
+\par
+PCI DSS compliance for payments\par
+\par
+Regular security audits\par
+\par
+Penetration testing\par
+\par
+Authentication & Authorization:\par
+\par
+JWT with short expiration\par
+\par
+Refresh token rotation\par
+\par
+OAuth 2.0 / OIDC\par
+\par
+Role-based access control (RBAC)\par
+\par
+API rate limiting\par
+\par
+Fraud Prevention:\par
+\par
+Device fingerprinting\par
+\par
+IP reputation checking\par
+\par
+Behavioral analytics\par
+\par
+Machine learning models\par
+\par
+Manual review triggers\par
+\par
+7.2 Regulatory Compliance\par
+Global Regulations:\par
+\par
+GDPR (Europe)\par
+\par
+CCPA (California)\par
+\par
+LGPD (Brazil)\par
+\par
+POPIA (South Africa)\par
+\par
+COPPA (Children's privacy)\par
+\par
+Financial Compliance:\par
+\par
+AML/KYC requirements\par
+\par
+Money transmitter licenses\par
+\par
+Payment processor partnerships\par
+\par
+Tax reporting (1099-K, etc.)\par
+\par
+Advertising Compliance:\par
+\par
+FTC endorsement guidelines\par
+\par
+Truth in advertising laws\par
+\par
+Age-restricted content rules\par
+\par
+Disclosure requirements\par
+\par
+7.3 Data Privacy\par
+User Rights:\par
+\par
+Right to access data\par
+\par
+Right to deletion\par
+\par
+Right to portability\par
+\par
+Right to object\par
+\par
+Consent management\par
+\par
+Data Minimization:\par
+\par
+Collect only necessary data\par
+\par
+Anonymization where possible\par
+\par
+Automatic data purging\par
+\par
+Purpose limitation\par
+\par
+8.0 LAUNCH STRATEGY\par
+8.1 Phased Rollout Plan\par
+Phase 1: Private Beta (Months 1-3)\par
+Focus: Core functionality validation\par
+\par
+Users: 500 selected early adopters\par
+Sponsors: 20-30 local businesses\par
+Features:\par
+\par
+\f2\u9989?\f1  \f0 Basic accounts\par
+\par
+\f2\u9989?\f1  \f0 Simple billboard\par
+\par
+\f2\u9989?\f1  \f0 CAP earning (limited actions)\par
+\par
+\f2\u9989?\f1  \f0 Wallet & withdrawals\par
+\par
+\f2\u10060?\f1  \f0 Live streaming (delayed)\par
+\par
+\f2\u10060?\f1  \f0 Advanced targeting (delayed)\par
+\par
+\f2\u10060?\f1  \f0 Marketplace (delayed)\par
+\par
+Success Metrics:\par
+\par
+Daily active users: >300\par
+\par
+Average engagement: >20 min/day\par
+\par
+CAP transactions: >1,000/day\par
+\par
+User satisfaction: >4/5\par
+\par
+Phase 2: Community Launch (Months 4-6)\par
+Focus: Growth and engagement\par
+\par
+Users: Open registration, single city\par
+Sponsors: 100-200 local + regional\par
+Features Added:\par
+\par
+\f2\u9989?\f1  \f0 Live streaming (basic)\par
+\par
+\f2\u9989?\f1  \f0 Room creation\par
+\par
+\f2\u9989?\f1  \f0 Comments and sharing\par
+\par
+\f2\u9989?\f1  \f0 Referral program\par
+\par
+\f2\u10060?\f1  \f0 Advanced analytics (delayed)\par
+\par
+Success Metrics:\par
+\par
+Users: 10,000+\par
+\par
+Sponsors: 150+\par
+\par
+Daily active: >3,000\par
+\par
+CAP economy: $50,000+ volume\par
+\par
+Phase 3: Regional Expansion (Months 7-12)\par
+Focus: Scaling and optimization\par
+\par
+Users: Multiple cities/countries\par
+Sponsors: 500+ regional + national\par
+Features Added:\par
+\par
+\f2\u9989?\f1  \f0 Advanced targeting\par
+\par
+\f2\u9989?\f1  \f0 Analytics dashboard\par
+\par
+\f2\u9989?\f1  \f0 Marketplace (MVP)\par
+\par
+\f2\u9989?\f1  \f0 A/B testing\par
+\par
+\f2\u9989?\f1  \f0 API for partners\par
+\par
+Success Metrics:\par
+\par
+Users: 100,000+\par
+\par
+Sponsors: 1,000+\par
+\par
+Daily active: >30,000\par
+\par
+Revenue: $100,000+ monthly\par
+\par
+Phase 4: Global Launch (Year 2+)\par
+Focus: Market leadership\par
+\par
+Users: Global\par
+Sponsors: Enterprise + SMB\par
+Features Added:\par
+\par
+\f2\u9989?\f1  \f0 Full feature set\par
+\par
+\f2\u9989?\f1  \f0 Multiple currencies\par
+\par
+\f2\u9989?\f1  \f0 Enterprise tools\par
+\par
+\f2\u9989?\f1  \f0 AI personalization\par
+\par
+\f2\u9989?\f1  \f0 Strategic partnerships\par
+\par
+Success Metrics:\par
+\par
+Users: 1,000,000+\par
+\par
+Sponsors: 10,000+\par
+\par
+Daily active: >300,000\par
+\par
+Revenue: $5M+ annually\par
+\par
+8.2 User Acquisition Strategy\par
+Referral Program:\par
+\par
+Inviter gets 100 CAP per active referral\par
+\par
+Invitee gets 50 CAP welcome bonus\par
+\par
+Tiered rewards: 10 referrals \f3\u8594?\f1  \f0 1,000 bonus CAP\par
+\par
+Leaderboard for top referrers\par
+\par
+Influencer Partnerships:\par
+\par
+Partner with micro-influencers\par
+\par
+Sponsored content on Viraz\par
+\par
+Influencer takeover of brand rooms\par
+\par
+Revenue sharing for influencer-driven sales\par
+\par
+Community Building:\par
+\par
+User groups and meetups\par
+\par
+Ambassador program\par
+\par
+Social media presence\par
+\par
+Content marketing\par
+\par
+Educational webinars\par
+\par
+8.3 Sponsor Acquisition Strategy\par
+Trial Incentives:\par
+\par
+First campaign: 20% bonus CAP\par
+\par
+Free campaign setup assistance\par
+\par
+Case studies and success stories\par
+\par
+Referral discount for referrals\par
+\par
+Tiered Pricing:\par
+\par
+Tier\tab Monthly Commit\tab Features\par
+Starter\tab $500+\tab Basic analytics, self-service\par
+Growth\tab $2,000+\tab Advanced targeting, priority support\par
+Enterprise\tab $10,000+\tab Dedicated account manager, API access\par
+9.0 RISK MANAGEMENT\par
+9.1 Risk Assessment Matrix\par
+Risk Category\tab Risk Description\tab Impact\tab Probability\tab Mitigation\par
+Financial\tab CAP inflation/devaluation\tab High\tab Medium\tab Dynamic valuation, stability reserve, CAP decay\par
+Financial\tab Sponsor default on payments\tab High\tab Low\tab Escrow system, credit checks, payment upfront\par
+Financial\tab Payment processor issues\tab High\tab Medium\tab Multiple processors, geographic redundancy\par
+Technical\tab Platform scalability failure\tab High\tab Medium\tab Microservices, auto-scaling, load testing\par
+Technical\tab Security breach\tab Critical\tab Low\tab Regular audits, bug bounty, encryption\par
+Technical\tab Data loss\tab Critical\tab Very Low\tab Automated backups, disaster recovery\par
+Fraud\tab Sybil attacks (fake users)\tab High\tab High\tab Phone verification, AI detection, earning limits\par
+Fraud\tab Click/cengagement farming\tab High\tab High\tab Behavioral analysis, CAP farming detection\par
+Fraud\tab Fake sponsor accounts\tab Medium\tab Medium\tab KYC verification, business documents\par
+Legal\tab Regulatory changes\tab High\tab Medium\tab Legal counsel, compliance monitoring\par
+Legal\tab Advertising violations\tab Medium\tab Medium\tab Content moderation, guidelines\par
+Operational\tab User churn\tab Medium\tab Medium\tab Gamification, notifications, value delivery\par
+Operational\tab Sponsor churn\tab High\tab Medium\tab ROI reporting, account management\par
+Reputation\tab Negative publicity\tab High\tab Low\tab Community management, transparency\par
+9.2 Mitigation Strategies\par
+Financial Safeguards:\par
+\par
+Daily and monthly earning caps\par
+\par
+Verification requirements for withdrawals\par
+\par
+Fraud detection AI\par
+\par
+Manual review of suspicious activity\par
+\par
+Insurance for large balances\par
+\par
+Technical Safeguards:\par
+\par
+Regular security audits\par
+\par
+Penetration testing\par
+\par
+DDoS protection\par
+\par
+Rate limiting\par
+\par
+Automated threat detection\par
+\par
+Operational Safeguards:\par
+\par
+24/7 monitoring\par
+\par
+Incident response plan\par
+\par
+Customer support team\par
+\par
+Community guidelines\par
+\par
+Appeals process\par
+\par
+10.0 APPENDICES\par
+Appendix A: Glossary of Terms\par
+Term\tab Definition\par
+CAP\tab Convertible Accumulated Points - The platform currency\par
+Billboard\tab Main discovery page showing ads and rooms\par
+Room\tab Interactive space where ads and engagement happen\par
+Sponsor\tab Advertiser who creates campaigns\par
+Engagement\tab Any user interaction with content\par
+KYC\tab Know Your Customer - identity verification\par
+Sybil Attack\tab Creating multiple fake accounts\par
+Escrow\tab Funds held by platform during campaign\par
+Appendix B: CAP Reward Weights Reference\par
+Action\tab Base CAP\tab Multiplier Factors\par
+View Content\tab 30\tab Video length, completion rate\par
+Like\tab 10\tab None\par
+Comment\tab 20\tab Quality, length\par
+Share\tab 40\tab Platform, reach\par
+Click Link\tab 50\tab Time on landing page\par
+Suggest Improvement\tab 60\tab Accepted suggestions bonus\par
+Participate in Poll\tab 25\tab None\par
+Complete Quiz\tab 45\tab Score percentage\par
+Save Product\tab 15\tab None\par
+Invite Friend\tab 35\tab Friend activity bonus\par
+Follow Brand\tab 5\tab None\par
+Report Issue\tab 10\tab Valid reports bonus\par
+Appendix C: Platform Policies Summary\par
+User Code of Conduct:\par
+\par
+No harassment or hate speech\par
+\par
+No spam or fake engagement\par
+\par
+Respect intellectual property\par
+\par
+One account per person\par
+\par
+Honest participation\par
+\par
+Sponsor Guidelines:\par
+\par
+Truthful advertising\par
+\par
+No misleading claims\par
+\par
+Respect user privacy\par
+\par
+Timely fulfillment\par
+\par
+Fair treatment of users\par
+\par
+Content Policy:\par
+\par
+No illegal content\par
+\par
+Age-appropriate restrictions\par
+\par
+No harmful products\par
+\par
+Disclosure requirements\par
+\par
+Copyright compliance\par
+\par
+DOCUMENT CONTROL\par
+Version\tab Date\tab Author\tab Changes\par
+1.0\tab Oct 26, 2023\tab Product Team\tab Initial draft\par
+2.0\tab Oct 27, 2023\tab Product Team\tab Added strategic enhancements: CAP economics, gamification deep dive, technical architecture, risk management, launch strategy\par
+End of Document\par
+\par
+This comprehensive PRD now includes all original requirements plus strategic enhancements for economic stability, user engagement, technical scalability, and risk management. The platform is positioned for sustainable growth with built-in safeguards and clear progression paths for both users and sponsors.\lang9\par
+}
+ 

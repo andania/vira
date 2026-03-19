@@ -1,0 +1,7 @@
+⏰ Reminder: {{roomName}} starts in {{minutes}} minutes!
+Host: {{hostName}}
+Topic: {{topic}}
+
+Don't miss out! Join now: {{roomUrl}}
+
+- VIRAZ Live
